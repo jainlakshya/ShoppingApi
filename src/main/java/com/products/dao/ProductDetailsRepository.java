@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductDetailsRepository extends JpaRepository<ProductDetails, String>{
-
+	
+	//Fetch all products from DB by id
 	List<ProductDetails> findAllByOrderByIdAsc ();
 
 }

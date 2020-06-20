@@ -1,36 +1,23 @@
-package com.products.dao;
+package com.products.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.stereotype.Component;
 
 /*
- * Model used to map DB data from table PRODUCTS
+ * Model used to store product data from cart in session
  */
-@Entity(name="PRODUCTS")
-public class ProductDetails {
+@Component
+public class ProductCartDetails {
 
-	public ProductDetails() {
-		super();
-	}
-
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "NAME")
 	private String name;
 	
-	@Column(name = "DESCRIPTION")
 	private String description;
 	
-	@Column(name = "UNITPRICE")
 	private int unitPrice;
 	
-	@Column(name = "IMAGE")
+	private int quantity;
+	
 	private String image;
 
 	
@@ -74,7 +61,12 @@ public class ProductDetails {
 		this.image = image;
 	}
 
+	public int getQuantity() {
+		return quantity;
+	}
 
-	
-	
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 }
